@@ -1,69 +1,81 @@
-# React + TypeScript + Vite
+# Game Hub - Video Game Discovery Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Game Hub is a modern web application that helps you discover new and interesting video games based on your gaming preferences. Whether you're looking for your next favorite game or want to explore different genres, Game Hub provides personalized recommendations to enhance your gaming experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Personalized Recommendations**: Get game suggestions tailored to your preferences and play history
+- **Genre Exploration**: Discover games across various genres and categories
+- **Advanced Filtering**: Filter games by platform, rating, release date, and more
+- **User Reviews & Ratings**: Read authentic reviews from fellow gamers
+- **Wishlist Management**: Save games you're interested in for later
+- **Modern UI**: Clean, responsive design that works on desktop and mobile
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend**: React 18 with TypeScript
+- **Build Tool**: Vite for fast development and optimized builds
+- **Styling**: Modern CSS with responsive design
+- **State Management**: React hooks and context
+- **Code Quality**: ESLint with TypeScript support
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (version 18 or higher)
+- pnpm (recommended) or npm
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd game-hub
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
 ```
+
+3. Start the development server:
+
+```bash
+pnpm dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+### Building for Production
+
+```bash
+pnpm build
+```
+
+The built files will be in the `dist` directory.
+
+## Development
+
+This project uses:
+
+- **TypeScript** for type safety
+- **ESLint** for code quality
+- **Vite** for fast development and building
+
+### Available Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm preview` - Preview production build
+- `pnpm lint` - Run ESLint
+
+## Contributing
+
+We welcome contributions! Please feel free to submit issues and pull requests.
+
+## License
+
+This project is licensed under the MIT License.
