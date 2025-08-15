@@ -1,6 +1,7 @@
 import { Grid, GridItem, Text, Box } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import { useColorMode } from "./components/ui/color-mode";
+import GameGrid from "./components/GameGrid";
 
 const Layout = () => {
   const { colorMode } = useColorMode();
@@ -32,12 +33,9 @@ const Layout = () => {
       <GridItem area="main" bg={isDark ? "#202020" : "#dedede"} p={4}>
         <Box>
           <Text fontSize="xl" fontWeight="bold" mb={4}>
-            Main Content Area
+            Games
           </Text>
-          <Text>
-            This area should change colors when you toggle dark mode using the
-            switch in the navbar.
-          </Text>
+          <GameGrid />
         </Box>
       </GridItem>
     </Grid>

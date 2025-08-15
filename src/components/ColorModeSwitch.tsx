@@ -7,10 +7,6 @@ const ColorModeSwitch = () => {
 
   return (
     <HStack>
-      <Button variant="outline" onClick={toggleColorMode}>
-        {isDark ? "🌙" : "☀️"}
-      </Button>
-
       <Switch.Root
         checked={isDark}
         onCheckedChange={toggleColorMode}
