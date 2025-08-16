@@ -8,26 +8,20 @@ import type { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import type { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/SortSelector";
+import "./index.css";
 
 export interface GameQuery {
 	genre: Genre | null;
 	platform: Platform | null;
 	sortOrder: string;
+	searchText: string;
 }
 
 function App() {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
   const isLargeScreen = useBreakpointValue({ base: false, lg: true });
-
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
-
-  // const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
-  // const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null); 
-
-  const handleSearch = (searchText: string) => {
-    console.log("Search:", searchText);
-  };
 
   return (
     <Grid
@@ -45,7 +39,7 @@ function App() {
       minH="100vh"
     >
       <GridItem area="nav">
-        <NavBar onSearch={handleSearch} />
+        <NavBar onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })} />
       </GridItem>
       {isLargeScreen && (
         <GridItem area="aside" p={4}>
