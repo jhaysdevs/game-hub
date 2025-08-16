@@ -1,23 +1,25 @@
-import { Image, type ImageProps } from '@chakra-ui/react'
-import bullsEye from '../assets/bulls-eye.webp'
-import thumbsUp from '../assets/thumbs-up.webp'
-import meh from '../assets/meh.webp'
-
+import { Icon } from '@chakra-ui/react'
+import { FaFaceMeh, FaFaceFrownOpen, FaFaceSmile } from 'react-icons/fa6'
+import type { IconType } from 'react-icons/lib'
 interface Props {
 	rating: number;
 }
 
 const Emoji = ({ rating }: Props) => {
 	if (rating < 3) return null;
-	
-	const emojiMap: { [key: number]: ImageProps } = {
-		3: { src: meh, alt: 'meh', boxSize: '25px' },
-		4: { src: thumbsUp, alt: 'recommended', boxSize: '25px' },
-		5: { src: bullsEye, alt: 'exceptional', boxSize: '35px' },
+
+	let color = 'red.500';
+	if (rating === 4) color = 'yellow.500';
+	if (rating === 5) color = 'green.500';
+
+	const emojiMap: { [key: number]: IconType } = {
+		3: FaFaceFrownOpen,
+		4: FaFaceMeh,
+		5: FaFaceSmile
 	}
 
 	return (
-		<Image {...emojiMap[rating]} marginTop={1} />
+		<Icon as={emojiMap[rating]} color={color} key={rating}></Icon>
 	)
 }
 

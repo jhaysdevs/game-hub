@@ -12,7 +12,7 @@ const GameGrid = ({ gameQuery }: Props) => {
 	const { data, error, isLoading } = useGames(gameQuery);
 	const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
-	if (error) return <Text>{error}</Text>;
+	if (error) return <Text marginY={5}>{error}</Text>;
 
   return (
 		<SimpleGrid marginX={-3} columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}>
@@ -26,7 +26,7 @@ const GameGrid = ({ gameQuery }: Props) => {
 					<GameCard game={game} />
 				</GameCardContainer>
 			))}
-			{!isLoading && data.length === 0 && <Text margin={3}>No games found</Text>}
+			{!isLoading && data.length === 0 && <Text marginY={5}>No games found</Text>}
 		</SimpleGrid>
   )
 }
