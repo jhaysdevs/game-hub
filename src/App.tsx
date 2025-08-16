@@ -5,6 +5,7 @@ import { useColorMode } from "./components/ui/color-mode";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import type { Genre } from "./hooks/useGenres";
+import PlatformSelector from "./components/PlatformSelector";
 
 function App() {
   const { colorMode } = useColorMode();
@@ -41,6 +42,7 @@ function App() {
       )}
       <GridItem area="main" p={4}>
         <Box>
+          <PlatformSelector />
           <GameGrid selectedGenre={selectedGenre} />
         </Box>
       </GridItem>
