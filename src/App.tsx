@@ -6,12 +6,14 @@ import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import type { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
+import type { Platform } from "./hooks/usePlatforms";
 
 function App() {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
   const isLargeScreen = useBreakpointValue({ base: false, lg: true });
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null);
 
   const handleSearch = (searchText: string) => {
     console.log("Search:", searchText);
@@ -42,8 +44,8 @@ function App() {
       )}
       <GridItem area="main" p={4}>
         <Box>
-          <PlatformSelector />
-          <GameGrid selectedGenre={selectedGenre} />
+          <PlatformSelector selectedPlatform={selectedPlatform} onSelectPlatform={(platform) => setSelectedPlatform(platform)} />
+          <GameGrid selectedGenre={selectedGenre} selectedPlatform={selectedPlatform} />
         </Box>
       </GridItem>
     </Grid>
