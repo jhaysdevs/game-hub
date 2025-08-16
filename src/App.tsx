@@ -36,7 +36,7 @@ function App() {
       </GridItem>
       {isLargeScreen && (
         <GridItem area="aside" p={4}>
-          <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
+          <GenreList selectedGenre={selectedGenre} onSelectGenre={(genre) => setSelectedGenre(genre)} />
         </GridItem>
       )}
       <GridItem area="main" p={4}>
