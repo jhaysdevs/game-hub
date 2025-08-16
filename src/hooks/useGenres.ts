@@ -9,6 +9,6 @@ export interface Genre {
 }
 
 // const useGenres = (selectedGenre: Genre | null) => useData<Genre>("/genres");
-const useGenres = (selectedGenre: Genre | null) => ({ data: genres, isLoading: false, error: null });
+const useGenres = () => ({ data: genres, isLoading: false, error: null });
 
 export default useGenres;
