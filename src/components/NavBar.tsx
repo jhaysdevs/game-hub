@@ -1,5 +1,6 @@
 import { HStack, Image, Spacer, Text } from "@chakra-ui/react";
-import logo from "../assets/logo.svg";
+// import logo from "../assets/logo.svg";
+import Logo from "@/components/Logo.tsx";
 import ColorModeSwitch from "./ColorModeSwitch";
 
 interface Props {
@@ -9,7 +10,8 @@ interface Props {
 const NavBar = ({ onSearch }: Props) => {
   return (
     <HStack padding="10px">
-      <Image src={logo} boxSize="60px" />
+      {/* <Image src={logo} boxSize="60px" /> */}
+      <Logo width="60px" />
       <Spacer />
       <Text fontWeight="bold">Game Hub</Text>
       <Spacer />

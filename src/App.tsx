@@ -1,4 +1,4 @@
-import { Grid, GridItem, Text, Box, useBreakpointValue } from "@chakra-ui/react";
+import { Grid, GridItem, Box, useBreakpointValue } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import { useColorMode } from "./components/ui/color-mode";
 import GameGrid from "./components/GameGrid";
@@ -15,6 +15,7 @@ const Layout = () => {
 
   return (
     <Grid
+      bg={isDark ? "#1B202A" : "#efefef"}
       templateAreas={
         isLargeScreen
           ? `"nav nav" "aside main"`
@@ -35,11 +36,8 @@ const Layout = () => {
           <GenreList />
         </GridItem>
       )}
-      <GridItem area="main" bg={isDark ? "#202020" : "#dedede"} p={4}>
+      <GridItem area="main" p={4}>
         <Box>
-          <Text fontSize="xl" fontWeight="bold" mb={4}>
-            Games
-          </Text>
           <GameGrid />
         </Box>
       </GridItem>
