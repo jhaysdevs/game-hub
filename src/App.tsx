@@ -1,13 +1,16 @@
+import { useState } from "react";
 import { Grid, GridItem, Box, useBreakpointValue } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import { useColorMode } from "./components/ui/color-mode";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
+import type { Genre } from "./hooks/useGenres";
 
-const Layout = () => {
+function App() {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
   const isLargeScreen = useBreakpointValue({ base: false, lg: true });
+  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
 
   const handleSearch = (searchText: string) => {
     console.log("Search:", searchText);
@@ -33,20 +36,16 @@ const Layout = () => {
       </GridItem>
       {isLargeScreen && (
         <GridItem area="aside" p={4}>
-          <GenreList />
+          <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
         </GridItem>
       )}
       <GridItem area="main" p={4}>
         <Box>
-          <GameGrid />
+          <GameGrid selectedGenre={selectedGenre} />
         </Box>
       </GridItem>
     </Grid>
   );
 };
-
-function App() {
-  return <Layout />;
-}
 
 export default App;
