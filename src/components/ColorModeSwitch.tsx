@@ -10,6 +10,7 @@ const ColorModeSwitch = () => {
       <Switch.Root
         checked={isDark}
         onCheckedChange={toggleColorMode}
+        colorPalette="green"
       >
         <Switch.Control onClick={toggleColorMode}>
           <Switch.Thumb />
