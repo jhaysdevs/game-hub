@@ -15,7 +15,7 @@ const ColorModeSwitch = () => {
         <Switch.Control onClick={toggleColorMode}>
           <Switch.Thumb />
         </Switch.Control>
-        <Switch.Label>{isDark ? "Dark" : "Light"} Mode</Switch.Label>
+        <Switch.Label whiteSpace="nowrap">{isDark ? "Dark" : "Light"} Mode</Switch.Label>
       </Switch.Root>
     </HStack>
   );

@@ -9,7 +9,6 @@ interface Props {
 }
 
 const GameCard = ({ game }: Props) => {
-	console.log(game.background_image);
 	return (
 		<Card.Root height="100%">
 			<Image src={getCroppedImageUrl(game.background_image)} />
