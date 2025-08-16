@@ -6,6 +6,7 @@ import {
   Spinner,
   Icon,
   Button,
+	Box,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import usePlatforms, { type Platform } from "../hooks/usePlatforms";
@@ -21,19 +22,21 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
 
   return (
     <MenuRoot>
-      <MenuTrigger asChild>
-        <Button variant="subtle">
-          {selectedPlatform?.name || "Platforms"}
-          <Icon as={BsChevronDown} ml={2} />
-        </Button>
-      </MenuTrigger>
-      <MenuContent>
-        {data.map((platform) => (
-          <MenuItem key={platform.id} value={platform.slug} onClick={() => onSelectPlatform(platform)}>
-            {platform.name}
-          </MenuItem>
-        ))}
-      </MenuContent>
+			<Box position="relative">
+				<MenuTrigger asChild>
+					<Button variant="subtle">
+						{selectedPlatform?.name || "Platforms"}
+						<Icon as={BsChevronDown} ml={2} />
+					</Button>
+				</MenuTrigger>
+				<MenuContent position="absolute">
+					{data.map((platform) => (
+						<MenuItem key={platform.id} value={platform.slug} onClick={() => onSelectPlatform(platform)}>
+							{platform.name}
+						</MenuItem>
+					))}
+				</MenuContent>
+			</Box>
     </MenuRoot>
   );
 };
