@@ -6,7 +6,7 @@ export interface Platform {
 	slug: string;
 }
 export interface Game {
-	parent_platforms: any;
+	parent_platforms: { platform: Platform }[];
 	id: number;
 	name: string;
 	slug: string;
@@ -23,7 +23,7 @@ const useGames = (
 		"/games", { 
 			params: { 
 				genres: gameQuery.genre?.id, 
-				platforms: gameQuery.platform?.id,
+				parent_platforms: gameQuery.platform?.id,
 				ordering: gameQuery.sortOrder,
 				search: gameQuery.searchText
 			} 

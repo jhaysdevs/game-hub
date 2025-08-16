@@ -26,7 +26,7 @@ const GameGrid = ({ gameQuery }: Props) => {
 					<GameCard game={game} />
 				</GameCardContainer>
 			))}
-			{!isLoading && data.length === 0 && <Text>No games found</Text>}
+			{!isLoading && data.length === 0 && <Text margin={3}>No games found</Text>}
 		</SimpleGrid>
   )
 }
