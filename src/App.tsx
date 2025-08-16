@@ -50,7 +50,7 @@ function App() {
       )}
       <GridItem area="main" p={4}>
         <GameHeading gameQuery={gameQuery} />
-        <HStack>
+        <HStack flexWrap="wrap">
           <PlatformSelector selectedPlatform={gameQuery.platform} onSelectPlatform={(platform) => setGameQuery({ ...gameQuery, platform })} />
           {!isLargeScreen && (
             <GenreSelector selectedGenre={gameQuery.genre} onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })} />
