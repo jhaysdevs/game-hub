@@ -2,6 +2,8 @@
 
 Game Hub is a modern web application that helps you discover new and interesting video games. Browse games by genre, platform, and more with a clean, responsive interface powered by the RAWG API.
 
+### [Try It Out Here](https://game-hub-nu-flame.vercel.app/)
+
 ## Features
 
 - **Game Discovery**: Browse and search through thousands of video games
