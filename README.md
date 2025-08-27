@@ -67,6 +67,69 @@ pnpm build
 
 The built files will be in the `dist` directory.
 
+## Project Structure
+
+```
+game-hub/
+├── public/                # Static assets
+├── src/
+│   ├── assets/            # Images, SVGs, and static files
+│   │   ├── logo.svg
+│   │   ├── no-image-placeholder.webp
+│   │   └── react.svg
+│   ├── components/        # React components
+│   │   ├── ui/            # Reusable UI components
+│   │   │   ├── color-mode.tsx
+│   │   │   ├── provider.tsx
+│   │   │   ├── toaster.tsx
+│   │   │   └── tooltip.tsx
+│   │   ├── ColorModeSwitch.tsx
+│   │   ├── CriticScore.tsx
+│   │   ├── Emoji.tsx
+│   │   ├── GameCard.tsx
+│   │   ├── GameCardContainer.tsx
+│   │   ├── GameCardSkeleton.tsx
+│   │   ├── GameGrid.tsx
+│   │   ├── GameHeading.tsx
+│   │   ├── GenreList.tsx
+│   │   ├── GenreSelector.tsx
+│   │   ├── Logo.tsx
+│   │   ├── NavBar.tsx
+│   │   ├── PlatformIconList.tsx
+│   │   ├── PlatformSelector.tsx
+│   │   ├── SearchInput.tsx
+│   │   └── SortSelector.tsx
+│   ├── data/             # Static data and constants
+│   │   ├── genres.ts
+│   │   └── platforms.ts
+│   ├── hooks/            # Custom React hooks
+│   │   ├── useData.ts
+│   │   ├── useGames.ts
+│   │   ├── useGenres.ts
+│   │   └── usePlatforms.ts
+│   ├── services/         # API and external services
+│   │   ├── api-client.ts
+│   │   └── image-url.ts
+│   ├── App.css
+│   ├── App.tsx           # Main application component
+│   ├── index.css
+│   ├── main.tsx          # Application entry point
+│   └── vite-env.d.ts
+├── .env.example          # Environment variables template
+├── .gitignore
+├── .prettierrc           # Prettier configuration
+├── .prettierignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+├── README.md
+├── tsconfig.json
+├── tsconfig.app.json
+├── tsconfig.node.json
+└── vite.config.ts
+```
+
 ## Development
 
 This project uses:
@@ -75,6 +138,7 @@ This project uses:
 - **ESLint** for code quality
 - **Vite** for fast development and building
 - **Chakra UI** for component library
+- **Prettier** for code formatting
 
 ### Available Scripts
 
