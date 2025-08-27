@@ -44,18 +44,12 @@ pnpm i
 
 3. Set up environment variables:
 
-Create a `.env` file in the project root and add your RAWG API key:
+- Get your free API key from [rawg.io](https://rawg.io/apidocs)
+- Rename the `.env.example` to `.env` and update the RAWG API key value:
 
 ```bash
 VITE_RAWG_API_KEY=your_rawg_api_key_here
 ```
-
-You can either:
-
-- Create a new `.env` file and add the above content
-- Or rename `.env.example` to `.env` and update the API key value
-
-Get your free API key from [rawg.io](https://rawg.io/apidocs)
 
 4. Start the development server:
 
