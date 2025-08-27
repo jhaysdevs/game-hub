@@ -1,22 +1,23 @@
 # Game Hub - Video Game Discovery Platform
 
-Game Hub is a modern web application that helps you discover new and interesting video games based on your gaming preferences. Whether you're looking for your next favorite game or want to explore different genres, Game Hub provides personalized recommendations to enhance your gaming experience.
+Game Hub is a modern web application that helps you discover new and interesting video games. Browse games by genre, platform, and more with a clean, responsive interface powered by the RAWG API.
 
 ## Features
 
-- **Personalized Recommendations**: Get game suggestions tailored to your preferences and play history
-- **Genre Exploration**: Discover games across various genres and categories
-- **Advanced Filtering**: Filter games by platform, rating, release date, and more
-- **User Reviews & Ratings**: Read authentic reviews from fellow gamers
-- **Wishlist Management**: Save games you're interested in for later
-- **Modern UI**: Clean, responsive design that works on desktop and mobile
+- **Game Discovery**: Browse and search through thousands of video games
+- **Genre & Platform Filtering**: Filter games by genre, platform, and other criteria
+- **Modern UI**: Clean, responsive design with dark/light mode support
+- **Real-time Search**: Search games with instant results
+- **Game Details**: View comprehensive game information and ratings
 
 ## Tech Stack
 
-- **Frontend**: React 18 with TypeScript
+- **Frontend**: React 19 with TypeScript
+- **UI Framework**: Chakra UI with emotion
 - **Build Tool**: Vite for fast development and optimized builds
-- **Styling**: Modern CSS with responsive design
+- **Styling**: Chakra UI components with responsive design
 - **State Management**: React hooks and context
+- **API**: RAWG Video Games Database API
 - **Code Quality**: ESLint with TypeScript support
 
 ## Getting Started
@@ -31,23 +32,38 @@ Game Hub is a modern web application that helps you discover new and interesting
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/jhaysdevs/game-hub.git
 cd game-hub
 ```
 
 2. Install dependencies:
 
 ```bash
-pnpm install
+pnpm i
 ```
 
-3. Start the development server:
+3. Set up environment variables:
+
+Create a `.env` file in the project root and add your RAWG API key:
+
+```bash
+VITE_RAWG_API_KEY=your_rawg_api_key_here
+```
+
+You can either:
+
+- Create a new `.env` file and add the above content
+- Or rename `.env.example` to `.env` and update the API key value
+
+Get your free API key from [rawg.io](https://rawg.io/apidocs)
+
+4. Start the development server:
 
 ```bash
 pnpm dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+5. Open your browser and navigate to `http://localhost:5173`
 
 ### Building for Production
 
@@ -64,6 +80,7 @@ This project uses:
 - **TypeScript** for type safety
 - **ESLint** for code quality
 - **Vite** for fast development and building
+- **Chakra UI** for component library
 
 ### Available Scripts
 
